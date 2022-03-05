@@ -1,0 +1,129 @@
+.App-header {
+  min-height: 100vh;
+  color: white;
+  position:relative
+}
+
+footer {
+  background-color: #374153;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+}
+header{
+  background-color: #374153;
+  color: white;
+  padding: 10px 20px;
+}
+header {
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.card {
+  margin: 10px 0;
+}
+
+a, a:hover {
+  color: #282c34;
+  text-decoration: none;
+}
+
+video {
+  width: 100%;
+  height: 50vh;
+}
+
+img {
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+p {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.colorwhite{
+  color:white
+}
+
+.blackbg{
+  background-color: #282c34;
+}
+
+.blackbg:hover{
+  background-color: green;
+}
+
+.zoom:hover{
+  transform:scale(1.1)
+}
+
+.pagecontainer{
+  position: relative;
+  min-height: 100vh;
+}
+
+.delete{
+
+  font-size: 50px;
+  padding: 5px;
+
+}
+
+.delete:hover{
+  transform: scale(1.3);
+  color:gainsboro
+}
+
+.play{
+  font-size: 50px;
+  padding: 5px;
+}
+
+.play:hover{
+  transform: scale(1.3);
+}
+
+.staymiddle{
+  position: absolute;
+  top:90px;
+  left:120px;
+}
+
+.optionchose{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+.clearUpload{
+  position:absolute;
+  top:10px;
+  right:30px;
+  font-size: 40px;
+}
+.clearUpload:hover{
+  transform: scale(1.3);
+}
+
+.spinnerCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Sliders{
+  border:4px  solid red;
+  position:absolute;
+  top:0;
+  height: 240px;
+  width: 320px;
+}
