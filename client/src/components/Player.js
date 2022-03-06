@@ -32,23 +32,31 @@ export default class Player extends Component {
       ...this.state,
       prcvideo: true
     })
-    const response = await fetch('http://localhost:4000/esavedvideo/' + this.state.videoId1, {
+    const response = fetch('http://localhost:4000/esavedvideo/' + this.state.videoId1, {
       method: 'GET'
     })
-
-    if (response) {
-      // const data = await response.json();
-      // console.log(this.state.video.data.name)
+    setTimeout(() => {
       this.setState({
         ...this.state,
         prcvideo: false,
         videoId: "assets",
         videoId1: this.state.videoId1.split('.')[0] + '.webm'
-      })
-    }
+      }, () => this.props.history.push('/player/assets/output.webm'))
+    }, 7000)
+    // if (response) {
+    //   // const data = await response.json();
+    //   // console.log(this.state.video.data.name)
+    //   this.setState({
+    //     ...this.state,
+    //     prcvideo: false,
+    //     videoId: "assets",
+    //     videoId1: this.state.videoId1.split('.')[0] + '.webm'
+    //   })
+    // }
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App-header text-center">
         {!this.state.prcvideo ?
@@ -67,9 +75,9 @@ export default class Player extends Component {
                 onClick={this.velEst} />
             }
             {this.state.videoId === "assets" &&
-              <div class="form-group optionchose">
+              <div className="form-group optionchose">
 
-                <select class="form-control" id="sel1" value={this.state.selectvalue} onChange={(e) => this.changeSelect(e.target.value)}>
+                <select className="form-control" id="sel1" value={this.state.selectvalue} onChange={(e) => this.changeSelect(e.target.value)}>
                   <option value="video">Video</option>
                   <option value="of">Optical Flow</option>
                   <option value="depth">Depth</option>

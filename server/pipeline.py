@@ -79,21 +79,23 @@ def detect(opt):
 
     # Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
     out = cv2.VideoWriter(
-        outfile[:-4] + "webm",
+        outfile[:-3] + "webm",
         cv2.VideoWriter_fourcc(*"vp80"),
         30,
         (frame_width, frame_height),
     )
 
+    i = 0
     while True:
         ret, frame = cap.read()
 
         if ret == True:
             # frame = edit_pipeline(model, frame)
             # Write the frame into the file 'output.avi'
-            frame = cv2.flip(frame, -1)
+            # frame = cv2.flip(frame, -1)
             out.write(frame)
-
+            i = i + 1
+            print("frame " + str(i) + " done")
             # Display the resulting frame
             # cv2.imshow("frame", frame)
 

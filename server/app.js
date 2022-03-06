@@ -54,6 +54,7 @@ getVelocity = (filename, res) => {
   // spawn new child process to call the python script
   const python = spawn('python3', ['./app2.py', filename]);
   console.log("Processing")
+
   // collect data from script
   var out = ""
   let resultError = "";
