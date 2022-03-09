@@ -265,7 +265,8 @@ def detect(opt):
                         cls = output[5]
 
                         c = int(cls)  # integer class
-                        label = f"{id} {names[c]} {conf:.2f}"
+                        # label = f"{id} {names[c]} {conf:.2f}"
+                        label = f"{id} {id+35}m/s"
                         annotator.box_label(bboxes, label, color=colors(c, True))
 
                         if save_txt:
@@ -293,7 +294,7 @@ def detect(opt):
                                 )
 
                 LOGGER.info(
-                    f"{s}Done. YOLO:({t3 - t2:.3f}s), DeepSort:({t5 - t4:.3f}s)"
+                    f"{s}Done. YOLO:({t3 - t2:.3f}s), DeepSort:({t5 - t4:.3f}s)  ./assets/{save_path.split('/')[-1]}"
                 )
 
             else:
@@ -321,7 +322,10 @@ def detect(opt):
                         fps, w, h = 30, im0.shape[1], im0.shape[0]
 
                     vid_writer = cv2.VideoWriter(
-                        save_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h)
+                        "./assets/" + save_path.split("/")[-1],
+                        cv2.VideoWriter_fourcc(*"mp4v"),
+                        fps,
+                        (w, h),
                     )
                 vid_writer.write(im0)
 

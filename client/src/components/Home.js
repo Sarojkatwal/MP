@@ -179,7 +179,7 @@ export default class Home extends Component {
               <div className='p-5'>
                 <video width="320" height="240" controls>
                   <source
-                    src={`http://localhost:4000/video/assets/${this.state.video.data.name.split('.')[0]}.webm`}
+                    src={`http://localhost:4000/video/assets/${this.state.video.data.name.split('.')[0]}.mp4`}
 
                   />
                   Your browser does not support the video tag.

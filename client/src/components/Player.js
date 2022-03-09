@@ -32,27 +32,27 @@ export default class Player extends Component {
       ...this.state,
       prcvideo: true
     })
-    const response = fetch('http://localhost:4000/esavedvideo/' + this.state.videoId1, {
+    const response = await fetch('http://localhost:4000/esavedvideo/' + this.state.videoId1, {
       method: 'GET'
     })
-    setTimeout(() => {
-      this.setState({
-        ...this.state,
-        prcvideo: false,
-        videoId: "assets",
-        videoId1: this.state.videoId1.split('.')[0] + '.webm'
-      }, () => this.props.history.push('/player/assets/' + this.state.videoId1))
-    }, 15000)
-    // if (response) {
-    //   // const data = await response.json();
-    //   // console.log(this.state.video.data.name)
+    // setTimeout(() => {
     //   this.setState({
     //     ...this.state,
     //     prcvideo: false,
     //     videoId: "assets",
     //     videoId1: this.state.videoId1.split('.')[0] + '.webm'
-    //   })
-    // }
+    //   }, () => this.props.history.push('/player/assets/' + this.state.videoId1))
+    // }, 15000)
+    if (response) {
+      // const data = await response.json();
+      // console.log(this.state.video.data.name)
+      this.setState({
+        ...this.state,
+        prcvideo: false,
+        videoId: "assets",
+        videoId1: this.state.videoId1.split('.')[0] + '.mp4'
+      })
+    }
   }
 
   render() {
